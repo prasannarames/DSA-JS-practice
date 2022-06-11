@@ -31,12 +31,15 @@
 
 // 0 <= x <= 10^9
 
-
 function findElement(n, arr, x) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == x) return i;
+  }
+  return -1;
+}
 
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] == x)
-            return i;       
-}
-return -1;
-}
+let n = 5;
+let arr = [1, 3, 4, 2, 1];
+let x = 4;
+
+console.log(findElement(n, arr, x));
