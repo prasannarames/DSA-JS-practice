@@ -1,8 +1,9 @@
-class LinkedList {
+class DoublyLinkedList {
   constructor(value) {
     this.head = {
       value: value,
       next: null,
+      prev: null,
     };
 
     this.tail = this.head;
@@ -13,6 +14,7 @@ class LinkedList {
     const newNode = {
       value: value,
       next: null,
+      prev: null,
     };
 
     this.tail.next = newNode;
@@ -82,14 +84,14 @@ class LinkedList {
   }
 }
 
-let myLL = new LinkedList(20);
+let myDLL = new DoublyLinkedList(20);
 
-myLL.append(30);
-myLL.append(40);
-myLL.append(50);
-myLL.prepend(10);
-myLL.insert(2, "hello");
-myLL.remove(3);
-// myLL.remove(2)
+myDLL.append(30);
+myDLL.append(40);
+myDLL.append(50);
+myDLL.prepend(10);
+myDLL.insert(2, "hello");
+myDLL.remove(3);
+// myDLL.remove(2)
 
-console.log(myLL.printList());
+console.log(myDLL.printList());
