@@ -20,24 +20,46 @@
 
 // The paragraph contains spaces, lowercase, uppercase characters and ‘.’.
 
-
-
-
 function capitalise(paragraph) {
-let ans = "";
+  // let ans = "";
 
-  for(let i=0; i<paragraph.length; i++){
-    if((i==0 &&(paragraph[i] >= "a" && paragraph[i] <= "z"))||(i>0 && paragraph[i-1] == " " && paragraph[i]>= "a" && paragraph[i]<= "z"))
-    {
-      ans+= String.fromCharCode(paragraph[i].charCodeAt(0) - 'a'.charCodeAt(0) + 'A'.charCodeAt(0) )
-       
-    }
-    else 
+  //   for(let i=0; i<paragraph.length; i++){
+  //     if((i==0 &&(paragraph[i] >= "a" && paragraph[i] <= "z"))||(i>0 && paragraph[i-1] == " " && paragraph[i]>= "a" && paragraph[i]<= "z"))
+  //     {
+  //       ans+= String.fromCharCode(paragraph[i].charCodeAt(0) - 'a'.charCodeAt(0) + 'A'.charCodeAt(0) )
+
+  //     }
+  //     else
+  //       ans += paragraph[i];
+  //   }
+
+  //   return ans;
+
+  // other method with edge case failures
+  // let para = paragraph.split(" ");
+
+  // for (let i = 0; i < para.length; i++) {
+  //   para[i] = para[i][0].toUpperCase() + para[i].substring(1);
+  // }
+  // return para.join(" ");
+
+  let ans = "";
+  let diff = "a".charCodeAt(0) - "A".charCodeAt(0);
+
+  for (let i = 0; i < paragraph.length; i++) {
+    if (
+      (i == 0 && paragraph[i] >= "a" && paragraph[i] <= "z") ||
+      (i > 0 &&
+        paragraph[i - 1] == " " &&
+        paragraph[i] >= "a" &&
+        paragraph[i] <= "z")
+    ) {
+      ans += String.fromCharCode(paragraph[i].charCodeAt(0) - diff);
+    } else {
       ans += paragraph[i];
+    }
   }
-
   return ans;
-  
 }
 
-console.log(capitalise("the quick Brown fox jumps over The lazy dog."))
+console.log(capitalise("the quick Brown fox jumps over The lazy dog."));
