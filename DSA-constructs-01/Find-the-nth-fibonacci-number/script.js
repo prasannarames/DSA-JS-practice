@@ -19,11 +19,24 @@
 // Constraints
 // 0 <= n <= 20
 
-function nthFibonacciNumber(n) {
-    if(n<2)
-    return n;
+// function nthFibonacciNumber(n) {
+//     if(n<2)
+//     return n;
     
-    return nthFibonacciNumber(n-1) + nthFibonacciNumber(n-2);
+//     return nthFibonacciNumber(n-1) + nthFibonacciNumber(n-2);
+// }
+
+function nthFibonacciNumber(n){
+
+    let arr = [0, 1]
+
+
+    for(let i=2; i<=n; i++){
+        arr.push(arr[i-1] + arr[i-2])
+    }
+
+    return arr[n]
+
 }
 
-console.log(nthFibonacciNumber(3))
+console.log(nthFibonacciNumber(8))
